@@ -17,7 +17,7 @@ resource "aws_instance" "bastion" {
 
 # Database server (private)
 resource "aws_instance" "db" {
-  ami                         = "ami-0dfec82a89aed24c1" # Own DB AMI
+  ami                         = "ami-0b963a93fa7586845" # Own DB AMI ami-0dfec82a89aed24c1
   instance_type               = "t2.micro"
   private_ip                  = "172.16.3.103"
   subnet_id                   = aws_subnet.private_a2.id # private2-us-east-1a (172.16.3.0/24)

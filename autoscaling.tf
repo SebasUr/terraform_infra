@@ -2,7 +2,7 @@
 
 resource "aws_launch_template" "web_template" {
   name_prefix   = "TF_template-WebCMS"
-  image_id      = "ami-0469b448e99c671ec"
+  image_id      = "ami-065d2b6e6d37c58c1" #"ami-0469b448e99c671ec"
   instance_type = "t2.small"
 
   vpc_security_group_ids = [aws_security_group.web.id]
