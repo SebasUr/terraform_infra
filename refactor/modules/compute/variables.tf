@@ -1,0 +1,10 @@
+variable "bastion_ami" { type = string }
+variable "db_ami" { type = string }
+variable "instance_type_bastion" { type = string }
+variable "instance_type_db" { type = string }
+variable "public_subnet_id" { type = string }
+variable "db_subnet_id" { type = string }
+variable "db_private_ip" { type = string }
+variable "key_name" { type = string }
+variable "sg_bastion_id" { type = string }
+variable "sg_db_id" { type = string }

@@ -1,0 +1,9 @@
+variable "private_subnet_ids" { type = list(string) }
+variable "launch_template_ami" { type = string }
+variable "instance_type" { type = string }
+variable "sg_web_id" { type = string }
+variable "key_name" { type = string }
+variable "target_group_arn" { type = string }
+variable "desired_capacity" { type = number }
+variable "min_size" { type = number }
+variable "max_size" { type = number }
