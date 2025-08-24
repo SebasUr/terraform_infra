@@ -47,3 +47,22 @@ module "autoscaling" {
   min_size            = var.web_min
   max_size            = var.web_max
 }
+
+module "database" {
+  source                  = "./modules/database"
+  cluster_identifier      = var.aurora_cluster_identifier
+  db_name                 = var.aurora_db_name
+  master_username         = var.aurora_master_username
+  master_password         = var.aurora_master_password
+  engine                  = var.aurora_engine
+  engine_version          = var.aurora_engine_version
+  instance_class          = var.aurora_instance_class
+  subnet_ids              = slice(module.network.private_subnet_ids, 1, 3)
+  vpc_id                  = module.network.vpc_id
+  sg_db_id                = module.security.sg_db_id
+  publicly_accessible     = false
+  apply_immediately       = true
+  backup_retention_period = 1
+  deletion_protection     = false
+  storage_encrypted       = false
+}

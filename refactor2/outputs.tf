@@ -5,3 +5,6 @@ output "bastion_public_ip" { value = module.compute.bastion_public_ip }
 output "db_private_ip" { value = module.compute.db_private_ip }
 output "alb_dns_name" { value = module.alb.alb_dns_name }
 output "asg_name" { value = module.autoscaling.asg_name }
+output "aurora_cluster_id" { value = module.database.cluster_id }
+output "aurora_endpoint" { value = module.database.endpoint }
+output "aurora_reader_endpoint" { value = module.database.reader_endpoint }

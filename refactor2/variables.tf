@@ -98,4 +98,48 @@ variable "alb_health_check_path" {
   default = "/"
 }
 
+# Aurora DB variables
+variable "aurora_cluster_identifier" {
+  description = "Identifier for the Aurora cluster"
+  type        = string
+  default     = "my-aurora-db"
+}
+
+variable "aurora_db_name" {
+  description = "Initial database name"
+  type        = string
+  default     = "drupal"
+}
+
+variable "aurora_master_username" {
+  description = "Master username"
+  type        = string
+  default     = "drupal"
+}
+
+variable "aurora_master_password" {
+  description = "Master password"
+  type        = string
+  sensitive   = true
+  default     = "admindrupal"
+}
+
+variable "aurora_instance_class" {
+  description = "Aurora instance class"
+  type        = string
+  default     = "db.t3.medium"
+}
+
+variable "aurora_engine" {
+  description = "Aurora MySQL engine"
+  type        = string
+  default     = "aurora-mysql"
+}
+
+variable "aurora_engine_version" {
+  description = "Aurora MySQL engine version"
+  type        = string
+  default     = null
+}
+
 
