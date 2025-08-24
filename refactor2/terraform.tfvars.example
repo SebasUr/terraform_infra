@@ -1,0 +1,32 @@
+region               = "us-east-1"
+key_name             = "hi"
+
+vpc_cidr             = "172.16.0.0/16"
+public_subnets = [
+  { cidr = "172.16.1.0/24", az = "us-east-1a" },
+  { cidr = "172.16.4.0/24", az = "us-east-1b" }
+]
+private_subnets = [
+  { cidr = "172.16.2.0/24", az = "us-east-1a" },
+  { cidr = "172.16.3.0/24", az = "us-east-1a" },
+  { cidr = "172.16.5.0/24", az = "us-east-1b" },
+  { cidr = "172.16.6.0/24", az = "us-east-1b" }
+]
+create_nat_gateways  = true
+
+# AMIs (actualiza según región)
+bastion_ami          = "ami-020cba7c55df1f615"
+db_ami               = "ami-0b963a93fa7586845"
+web_ami              = "ami-065d2b6e6d37c58c1"
+
+instance_type_bastion = "t2.micro"
+instance_type_db      = "t2.micro"
+web_instance_type     = "t2.small"
+
+db_private_ip        = "172.16.3.103" # Debe estar dentro del CIDR de la subnet elegida
+
+web_min              = 2
+web_max              = 2
+web_desired          = 2
+
+alb_health_check_path = "/"
